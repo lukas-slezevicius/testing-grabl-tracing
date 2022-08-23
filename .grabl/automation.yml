@@ -28,13 +28,3 @@ build:
       image: vaticle-ubuntu-21.04
       command: |
         ls
-release:
-  validation:
-    validate-dependencies:
-      image: vaticle-ubuntu-21.04
-      command: ls
-  deployment:
-    deploy-github:
-      image: vaticle-ubuntu-21.04
-      command: |
-        ls
