@@ -10,6 +10,6 @@ def vaticle_dependencies():
 def vaticle_factory_tracing():
     git_repository(
         name = "vaticle_factory_tracing",
-        remote = "https://github.com/vaticle/factory-tracing",
-        commit = "a4d5e36b1b0c56bd370e5a7583d628de9272f086"  # sync-marker: do not remove this comment, this is used for sync-dependencies by @vaticle_factory_tracing
+        remote = "https://github.com/lukas-slezevicius/factory-tracing",
+        commit = "dc65fe025944b9dd9b32c325648b4d61c517bb58"  # sync-marker: do not remove this comment, this is used for sync-dependencies by @vaticle_factory_tracing
     )
