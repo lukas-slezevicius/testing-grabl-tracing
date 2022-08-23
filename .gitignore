@@ -1,5 +1,2 @@
 .ijwb/
-bazel-bin/
-bazel-out/
-bazel-testing-grabl-tracing/
-bazel-testlogs/
+bazel-*
