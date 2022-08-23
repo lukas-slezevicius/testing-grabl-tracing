@@ -6,4 +6,4 @@ build:
   performance:
     test-performance-typedb-cluster-bootstrapper:
       image: vaticle-ubuntu-21.04
-      command bazel run //:trace -- $GRABL_TRACING_URI $GRABL_TOKEN $GRABL_OWNER $GRABL_REPO $GRABL_COMMIT
+      command: bazel run //:trace -- $GRABL_TRACING_URI $GRABL_TOKEN $GRABL_OWNER $GRABL_REPO $GRABL_COMMIT
