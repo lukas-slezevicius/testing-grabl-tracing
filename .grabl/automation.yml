@@ -33,3 +33,7 @@ build:
       image: vaticle-ubuntu-21.04
       command: |
         echo $GRABL_TRACING_URI
+        echo $GRABL_TOKEN
+        echo $GRABL_OWNER
+        echo $GRABL_REPO
+        echo $GRABL_COMMIT
