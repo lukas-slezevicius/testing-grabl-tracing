@@ -2,6 +2,8 @@ package trace;
 
 import com.vaticle.factory.tracing.client.FactoryTracing;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Trace {
     public static void main(String[] args) throws InterruptedException {
         var uri = args[0];
@@ -18,8 +20,25 @@ public class Trace {
         System.out.println(name);
         var tracing = FactoryTracing.create(uri, owner, token);
         var analysis = tracing.analysis(owner, repo, commit, name);
-        var root = analysis.trace("the-root", "tracker?", 1);
-        Thread.sleep(1000);
-        root.end();
+        for (int i = 0; i < 10; i++) {
+            var root = analysis.trace("the-root", "tracker?", i);
+            f(root);
+            g(root);
+            root.end();
+        }
+    }
+
+    public static void f(FactoryTracing.Trace t) throws InterruptedException {
+        t.trace("f");
+        int randomNum = ThreadLocalRandom.current().nextInt(1, 2000);
+        Thread.sleep(randomNum);
+        t.end();
+    }
+
+    public static void g(FactoryTracing.Trace t) throws InterruptedException {
+        t.trace("f");
+        int randomNum = ThreadLocalRandom.current().nextInt(1, 2000);
+        Thread.sleep(randomNum);
+        t.end();
     }
 }
