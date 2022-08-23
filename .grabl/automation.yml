@@ -10,7 +10,7 @@ build:
     dependency-analysis:
       image: vaticle-ubuntu-21.04
       command: |
-        las
+        ls
   correctness:
     build:
       image: vaticle-ubuntu-21.04
