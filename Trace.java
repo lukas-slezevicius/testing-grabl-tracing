@@ -29,16 +29,24 @@ public class Trace {
     }
 
     public static void f(FactoryTracing.Trace t) throws InterruptedException {
-        t.trace("f");
+        var t2 = t.trace("f");
         int randomNum = ThreadLocalRandom.current().nextInt(1, 2000);
         Thread.sleep(randomNum);
-        t.end();
+        h(t2);
+        t2.end();
+    }
+
+    public static void h(FactoryTracing.Trace t) throws InterruptedException {
+        var t2 = t.trace("h");
+        int randomNum = ThreadLocalRandom.current().nextInt(1, 2000);
+        Thread.sleep(randomNum);
+        t2.end();
     }
 
     public static void g(FactoryTracing.Trace t) throws InterruptedException {
-        t.trace("f");
+        var t2 = t.trace("g");
         int randomNum = ThreadLocalRandom.current().nextInt(1, 2000);
         Thread.sleep(randomNum);
-        t.end();
+        t2.end();
     }
 }
