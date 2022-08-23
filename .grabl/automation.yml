@@ -1,33 +1,9 @@
 build:
-  quality:
-    filter:
-      owner: lukas-slezevicius
-      branch: main
-    build-analysis:
-      image: vaticle-ubuntu-21.04
-      command: |
-        ls
-    dependency-analysis:
-      image: vaticle-ubuntu-21.04
-      command: |
-        ls
   correctness:
     build:
       image: vaticle-ubuntu-21.04
       command: |
-        ls
-    build-dependency:
-      image: vaticle-ubuntu-21.04
-      command: |
-        ls
-    test-unit:
-      image: vaticle-ubuntu-21.04
-      command: |
-        ls
-    test-integration:
-      image: vaticle-ubuntu-21.04
-      command: |
-        ls
+        bazel build //...
   performance:
     test-performance-typedb-cluster-bootstrapper:
       image: vaticle-ubuntu-21.04
