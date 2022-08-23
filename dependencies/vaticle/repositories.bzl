@@ -11,5 +11,5 @@ def vaticle_factory_tracing():
     git_repository(
         name = "vaticle_factory_tracing",
         remote = "https://github.com/lukas-slezevicius/factory-tracing",
-        commit = "dc65fe025944b9dd9b32c325648b4d61c517bb58"  # sync-marker: do not remove this comment, this is used for sync-dependencies by @vaticle_factory_tracing
+        commit = "ba25f5c20a074575710b8c3ebc59cd2e4fdafe6b"  # sync-marker: do not remove this comment, this is used for sync-dependencies by @vaticle_factory_tracing
     )
