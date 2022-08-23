@@ -1,8 +1,4 @@
 build:
-  correctness:
-    build:
-      image: vaticle-ubuntu-21.04
-      command: bazel build //...
   performance:
     test-performance-typedb-cluster-bootstrapper:
       image: vaticle-ubuntu-21.04
