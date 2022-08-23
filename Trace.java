@@ -21,10 +21,12 @@ public class Trace {
         var tracing = FactoryTracing.create(uri, owner, token);
         var analysis = tracing.analysis(owner, repo, commit, name);
         for (int i = 0; i < 10; i++) {
-            var root = analysis.trace("the-root", "tracker?", i);
-            f(root);
-            g(root);
-            root.end();
+            for (int t = 1; t <= 2; t++) {
+                var root = analysis.trace("the-root", String.valueOf(t), i);
+                f(root);
+                g(root);
+                root.end();
+            }
         }
     }
 
@@ -45,6 +47,15 @@ public class Trace {
 
     public static void g(FactoryTracing.Trace t) throws InterruptedException {
         var t2 = t.trace("g");
+        int randomNum = ThreadLocalRandom.current().nextInt(1, 2000);
+        Thread.sleep(randomNum);
+        i(t2);
+        i(t2);
+        t2.end();
+    }
+
+    public static void i(FactoryTracing.Trace t) throws InterruptedException {
+        var t2 = t.trace("i");
         int randomNum = ThreadLocalRandom.current().nextInt(1, 2000);
         Thread.sleep(randomNum);
         t2.end();
